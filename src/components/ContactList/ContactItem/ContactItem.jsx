@@ -5,12 +5,12 @@ import { StyledButton, StyledSpanName, StyledSpanNumber } from '../ContactList.s
 import { useDispatch } from 'react-redux';
 import { deleteContactThunk } from '../../../redux/operations';
 
-function ContactItem({ id, name, number}) {
+function ContactItem({ id, name, phone}) {
   const dispatch = useDispatch();
   return(
     <StyledLi>
       <StyledSpanName>{name}</StyledSpanName>
-      <StyledSpanNumber>{number}</StyledSpanNumber>
+      <StyledSpanNumber>{phone}</StyledSpanNumber>
       <StyledButton onClick={()=> dispatch(deleteContactThunk(id))}>Delete</StyledButton>
     </StyledLi>
   );
