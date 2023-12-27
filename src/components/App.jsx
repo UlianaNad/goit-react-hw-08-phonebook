@@ -5,6 +5,7 @@ import { SearchContact } from './Search/SearchContact';
 import { StyledWrapper } from './App.styled';
 import { ToastContainer } from 'react-toastify';
 
+
 export const App = () => {
   return (
     <StyledWrapper>
