@@ -1,16 +1,20 @@
+import React from 'react';
+import ContactList from './ContactList/ContactList';
+import { AddContactForm } from './AddContact/AddContact';
+import { SearchContact } from './Search/SearchContact';
+import { StyledWrapper } from './App.styled';
+import { ToastContainer } from 'react-toastify';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <StyledWrapper>
+      <h1>Contact book</h1>
+      <AddContactForm />
+      <SearchContact />
+      <ContactList />
+      <ToastContainer />
+    </StyledWrapper>
   );
 };
+
+export default App;
