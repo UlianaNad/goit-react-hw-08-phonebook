@@ -1,15 +1,13 @@
 import React from 'react';
-import { AddContactForm } from './AddContact/AddContact';
-import { SearchContact } from './Search/SearchContact';
-import ContactList from './ContactList/ContactList';
+import { useSelector } from 'react-redux';
+import { selectUserName } from '../../redux/auth/selectors';
 
 const HomePage = () => {
+  const user = useSelector(selectUserName);
   return (
     <div>
-      <AddContactForm />
-      <SearchContact />
-      <ContactList />
-    </div>
+       {user && <h2>{user}</h2>}
+  </div>
   );
 };
 

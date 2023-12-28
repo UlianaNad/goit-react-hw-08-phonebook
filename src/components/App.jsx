@@ -9,6 +9,8 @@ import Register from './Pages/Register/Register';
 import Login from './Pages/Login/Login';
 import { useDispatch } from 'react-redux';
 import { refreshThunk } from '../redux/auth/operations';
+import Contacts from './Pages/Contacts';
+import PrivateRoute from 'routesConfig/PrivateRoute';
 
 
 export const App = () => {
@@ -22,7 +24,9 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/contacts" element={<h1>Contact list</h1>} />
+          <Route path="/contacts" element={
+            <PrivateRoute><Contacts/></PrivateRoute>
+          } />
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="/*" element={<NotFound/>} />
