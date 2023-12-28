@@ -1,8 +1,8 @@
-import { StyledInput } from 'components/AddContact/AddContact.styled';
+import { StyledInput } from 'components/Pages/AddContact/AddContact.styled';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from '../../redux/filterSlice';
-import { searchContact } from '../../redux/selectors';
+import { setFilter } from '../../../redux/filterSlice';
+import { searchContact } from '../../../redux/selectors';
 
 export const SearchContact = () => {
   const dispatch = useDispatch();
