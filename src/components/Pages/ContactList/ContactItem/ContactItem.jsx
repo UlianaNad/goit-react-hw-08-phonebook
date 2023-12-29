@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteContactThunk } from '../../../../redux/operations';
+import { deleteContactThunk } from '../../../../redux/contacts/operations';
 
 function ContactItem({ id, name, number }) {
   const dispatch = useDispatch();

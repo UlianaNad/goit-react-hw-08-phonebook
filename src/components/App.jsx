@@ -13,7 +13,7 @@ import PrivateRoute from 'routesConfig/PrivateRoute';
 import PublicRoute from 'routesConfig/PublicRoute';
 import { selectRefresh } from '../redux/auth/selectors';
 import Loader from './Loader';
-import { fetchContactsThunk } from '../redux/operations';
+import { fetchContactsThunk } from '../redux/contacts/operations';
 
 export const App = () => {
   const dispatch = useDispatch();
