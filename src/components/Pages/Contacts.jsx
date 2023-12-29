@@ -9,8 +9,11 @@ const Contacts = () => {
   const contacts = useSelector(contactsData);
   return (
     <div>
+      <h3 className="text-xl font-bold tracking-tight text-teal-600 mt-5">
+        Add your new contact
+      </h3>
       <AddContactForm />
-      {contacts.length === 0 ? <h3>Add your first contact</h3>  : (
+      {contacts.length > 0 && (
         <>
           <SearchContact />
           <ContactList />

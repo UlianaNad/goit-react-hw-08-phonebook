@@ -1,14 +1,16 @@
-import NavBar from 'components/NavBar/NavBar'
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import NavBar from 'components/NavBar/NavBar';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
     <div>
-        <NavBar/>
-        <Outlet/>
+      <NavBar />
+      <div className="flex justify-center">
+        <Outlet />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

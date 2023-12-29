@@ -1,18 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledLi } from './ContactItem.styled';
-import { StyledButton, StyledSpanName, StyledSpanNumber } from '../ContactList.styled';
 import { useDispatch } from 'react-redux';
 import { deleteContactThunk } from '../../../../redux/operations';
 
-function ContactItem({ id, name, number}) {
+function ContactItem({ id, name, number }) {
   const dispatch = useDispatch();
-  return(
-    <StyledLi>
-      <StyledSpanName>{name}</StyledSpanName>
-      <StyledSpanNumber>{number}</StyledSpanNumber>
-      <StyledButton onClick={()=> dispatch(deleteContactThunk(id))}>Delete</StyledButton>
-    </StyledLi>
+  return (
+    <li className="flex justify-between gap-x-6 py-2">
+      <div className="flex min-w-0 gap-x-4">
+        <p className="text-sm font-semibold leading-6 text-gray-900">{name}</p>
+        <p className="mt-1 truncate text-xs leading-5 text-gray-500">
+          {number}
+        </p>
+
+        <button
+          onClick={() => dispatch(deleteContactThunk(id))}
+          className="text-sm leading-6 text-gray-900"
+        >
+          Delete
+        </button>
+      </div>
+    </li>
   );
 }
 
