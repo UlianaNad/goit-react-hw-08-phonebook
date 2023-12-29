@@ -10,22 +10,24 @@ const NavBar = () => {
 
   const dispatch = useDispatch()
   return (
-    <ul className="flex justify-between gap-0.5 py-3.5">
-      <NavLink to="/">Homepage</NavLink>
-      <NavLink to="/contacts">Contacts</NavLink>
+    <header className=' px-6 py-14'>
+    <ul className="hidden lg:flex justify-between">
+      <NavLink className="text-sm font-semibold leading-6 text-gray-900" to="/">Homepage</NavLink>
+      <NavLink className="text-sm font-semibold leading-6 text-gray-900" to="/contacts">Contacts</NavLink>
       {!isLoggedIn && (
         <>
-          <NavLink to="/login">Login</NavLink>
-          <NavLink to="/register">Register</NavLink>
+          <NavLink className="text-sm font-semibold leading-6 text-gray-900" to="/login">Login</NavLink>
+          <NavLink className="text-sm font-semibold leading-6 text-gray-900" to="/register">Register</NavLink>
         </>
       )}
-      {user && <h2>{user}</h2>}
+      {user && <h2 className="text-sm font-semibold leading-6 text-gray-900">{user}</h2>}
       {isLoggedIn && (
         <>
-          <button onClick={() => dispatch(logoutThunk())}>Exit</button>
+          <button className="text-sm font-semibold leading-6 text-gray-900" onClick={() => dispatch(logoutThunk())}>Exit</button>
         </>
       )}
     </ul>
+    </header>
   );
 };
 
