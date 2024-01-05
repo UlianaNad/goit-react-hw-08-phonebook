@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { contactsData } from '../../../redux/contacts/selectors';
+import { contactsData } from '../../redux/contacts/selectors';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { addContactThunk } from '../../../redux/contacts/operations';
+import { addContactThunk } from '../../redux/contacts/operations';
 
 export const AddContactForm = () => {
   const dispatch = useDispatch();

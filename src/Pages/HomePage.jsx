@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../redux/auth/selectors';
+import { selectUser } from '../redux/auth/selectors';
 
 const HomePage = () => {
   const user = useSelector(selectUser);

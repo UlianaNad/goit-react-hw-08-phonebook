@@ -1,26 +1,24 @@
 import React, { useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import { Route, Routes } from 'react-router-dom';
-import Layout from './Layout/Layout';
-import HomePage from './Pages/HomePage';
-import NotFound from './Pages/NotFound/NotFound';
-import Register from './Pages/Register/Register';
-import Login from './Pages/Login/Login';
+import Layout from './components/Layout/Layout';
 import { useDispatch, useSelector } from 'react-redux';
-import { refreshThunk } from '../redux/auth/operations';
-import Contacts from './Pages/Contacts';
+import { refreshThunk } from './redux/auth/operations';
 import PrivateRoute from 'routesConfig/PrivateRoute';
 import PublicRoute from 'routesConfig/PublicRoute';
-import { selectRefresh } from '../redux/auth/selectors';
-import Loader from './Loader';
-import { fetchContactsThunk } from '../redux/contacts/operations';
+import { selectRefresh } from './redux/auth/selectors';
+import Loader from './components/Loader';
+import HomePage from 'Pages/HomePage';
+import Contacts from 'Pages/Contacts';
+import Login from 'Pages/Login';
+import Register from 'Pages/Register';
+import NotFound from 'Pages/NotFound';
 
 export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(refreshThunk());
-    dispatch(fetchContactsThunk());
   }, [dispatch]);
 
   const isRefresh = useSelector(selectRefresh);

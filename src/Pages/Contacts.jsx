@@ -1,9 +1,9 @@
 import React from 'react';
-import { AddContactForm } from './AddContact/AddContact';
-import { SearchContact } from './Search/SearchContact';
-import ContactList from './ContactList/ContactList';
 import { useSelector } from 'react-redux';
-import { contactsData } from '../../redux/contacts/selectors';
+import { contactsData } from '../redux/contacts/selectors';
+import { AddContactForm } from 'components/AddContact/AddContact';
+import { SearchContact } from 'components/Search/SearchContact';
+import ContactList from 'components/ContactList/ContactList';
 
 const Contacts = () => {
   const contacts = useSelector(contactsData);

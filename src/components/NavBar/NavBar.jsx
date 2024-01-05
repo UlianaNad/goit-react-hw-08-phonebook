@@ -19,12 +19,13 @@ const NavBar = () => {
           >
             Homepage
           </NavLink>
+          {isLoggedIn ? (
           <NavLink
             className="text-sm font-semibold leading-6 text-gray-900"
             to="/contacts"
           >
             Contacts
-          </NavLink>
+          </NavLink> ) : null }
         </div>
         <div className="flex gap-8">
           {!isLoggedIn && (
